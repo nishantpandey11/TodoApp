@@ -9,16 +9,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todo List',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BlocProvider(
-        builder: (context) => TodoBloc(TodoRepositoryImpl()),
+      home: BlocProvider<TodoBloc>(
+        create: (context) => TodoBloc(TodoRepositoryImpl()),
         child: HomePage(),
       ),
     );

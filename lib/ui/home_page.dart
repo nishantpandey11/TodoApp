@@ -8,10 +8,13 @@ import 'package:todoapp/data/model/api_response_model.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
+
 }
 
 class _HomePageState extends State<HomePage> {
   TodoBloc todoBloc;
+
+
 
   @override
   void initState() {
@@ -91,10 +94,13 @@ class _HomePageState extends State<HomePage> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.lightGreen,
+              backgroundColor: Colors.white,
               child: Text(todos[position].id.toString()),
             ),
-            title: Text(todos[position].title),
+            title: Text(
+                todos[position].title[0].toUpperCase() +
+                todos[position].title.substring(1)
+            ),
             subtitle: Text(getStatus(todos[position].isCompleted)),
           ),
         );

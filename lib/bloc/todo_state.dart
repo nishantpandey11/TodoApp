@@ -14,7 +14,7 @@ class TodoLoadingState extends TodoState {
 }
 
 class TodoLoadedState extends TodoState {
-  List<Todo> todo;
+  final List<Todo> todo;
 
   TodoLoadedState(this.todo);
 
@@ -23,7 +23,7 @@ class TodoLoadedState extends TodoState {
 }
 
 class TodoErrorState extends TodoState {
-  String msg;
+  final String msg;
 
   TodoErrorState(this.msg);
 
